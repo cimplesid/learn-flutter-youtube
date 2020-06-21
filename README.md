@@ -1,10 +1,14 @@
-# List of yotube video on my channels about flutter
+# List of youtube video on my channels about flutter
 
 ## From now on all the code and links will be avaliable in this repo. 
 
 ## YouTube Channel
 
 [SidTube](https://www.youtube.com/c/Sidtube)
+
+## IF you wanna contact me
+
+[Telegram](https://t.me/cimplesid)
 
 ## YouTube Links
 
@@ -27,7 +31,9 @@
 
 9. [Flutter - handle connection like a pro](https://www.youtube.com/c/Sidtube)
 
-10. [subscribe more content on its way](https://www.youtube.com/c/Sidtube)
+10. [Flutter-Event logging/Key logging App](https://www.youtube.com/watch?v=PalIKmi5IM0) 
+
+11. [subscribe more content on its way](https://www.youtube.com/c/Sidtube)
 
 <hr>
 
