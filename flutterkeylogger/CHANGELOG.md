@@ -1,3 +1,7 @@
-## 0.0.1
+## 1.0.1
 
-* TODO: Describe initial release.
+* Description updated
+
+## 1.0.0
+
+* Initial release and up an running
