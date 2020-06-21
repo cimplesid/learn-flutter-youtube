@@ -1,6 +1,6 @@
 name: flutterkeylogger
 description: A event/key logging plugin for android
-version: 1.0.1
+version: 1.0.1+1
 homepage: https://github.com/cimplesid/learn-flutter-youtube/tree/master/flutterkeylogger
 
 environment:

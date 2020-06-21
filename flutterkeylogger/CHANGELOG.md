@@ -1,3 +1,7 @@
+## 1.0.1+1
+
+* License updated
+
 ## 1.0.1
 
 * Description updated
