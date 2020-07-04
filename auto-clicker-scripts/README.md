@@ -5,3 +5,5 @@
 # bulk message scripts for facebook messenger,telegram and discord
 
  <a href="https://youtu.be/JlGKqqZEqr4">Watch video tutorial here</a>
+ 
+# Note:-script is made for 15 inch screens if you have different size screen try modifing values of  X and Y in 1 and 3 in scripts
