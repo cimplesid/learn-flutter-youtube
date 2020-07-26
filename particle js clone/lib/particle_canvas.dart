@@ -19,7 +19,7 @@ class _ParticleCanvasState extends State<ParticleCanvas>
   List<List> lines = [];
   AnimationController controller, mouseController;
   Duration mouseDuration = Duration(milliseconds: 600);
-  var random = new Random();
+  var random = Random();
   List<bool> rndDirection = [];
   List<double> rndPos = [];
   double speed = 1, temp = 0, dx, dy, mradius = 50;
@@ -150,7 +150,7 @@ class DotsPainter extends CustomPainter {
   final List<Offset> dots;
   final List<List> lines;
   List<double> sizes = [1, 2, 3];
-  var random = new Random();
+  var random = Random();
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -161,7 +161,7 @@ class DotsPainter extends CustomPainter {
     lines.forEach((element) {
       var paint = Paint()
         ..color = Colors.white
-        ..strokeWidth = 4 * (1 - element[2] / 50);
+        ..strokeWidth = 2 * (1 - element[2] / 50);
       canvas.drawLine(element[0], element[1], paint);
     });
   }
