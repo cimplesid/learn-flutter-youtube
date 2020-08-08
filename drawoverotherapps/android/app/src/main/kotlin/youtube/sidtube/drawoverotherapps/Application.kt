@@ -1,3 +1,5 @@
+package youtube.sidtube.drawoverotherapps
+
 import `in`.jvapps.system_alert_window.SystemAlertWindowPlugin
 import io.flutter.app.FlutterApplication
 import io.flutter.plugin.common.PluginRegistry
