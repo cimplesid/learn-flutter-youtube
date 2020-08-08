@@ -32,6 +32,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.99"
+  system_alert_window:
+    dependency: "direct main"
+    description:
+      name: system_alert_window
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.3.2+1"
   typed_data:
     dependency: transitive
     description:

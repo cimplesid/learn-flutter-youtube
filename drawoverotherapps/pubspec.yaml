@@ -9,10 +9,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
-
-
+  system_alert_window: ^0.3.2+1
 
 flutter:
   uses-material-design: true
-
