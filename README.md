@@ -39,7 +39,11 @@
 
 13. [🔥🔥🔥Flutter - Particle js clone🔥🔥🔥](https://youtu.be/MYLc8O5PviQ)
 
-14. [subscribe more content on its way](https://www.youtube.com/c/Sidtube)
+14. [how to make truecaller like overlay over other app in flutter?](https://www.youtube.com/watch?v=59K_2KnHEmg)
+
+15. [🔥🔥🔥How to capture a photo without opening a camera ? 🔥🔥🔥](https://youtu.be/N4TxuK1eAAQ)
+
+16. [subscribe more content on its way](https://www.youtube.com/c/Sidtube)
 
 
 
