@@ -43,7 +43,11 @@
 
 15. [🔥🔥🔥How to capture a photo without opening a camera ? 🔥🔥🔥](https://youtu.be/N4TxuK1eAAQ)
 
-16. [subscribe more content on its way](https://www.youtube.com/c/Sidtube)
+16. [Flutter Global snackbar tutorial](https://www.youtube.com/watch?v=5RBWAbIuqL0)
+
+17. [How to setup multiple versions of flutter on same device?](https://www.youtube.com/watch?v=cSrrWQMOeqE)
+
+18.[subscribe more content on its way](https://www.youtube.com/c/Sidtube)
 
 
 
