@@ -10,6 +10,9 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   Coin coin;
+  var scrollController = ScrollController();
+  bool updating = false;
+
   @override
   void initState() {
     super.initState();
@@ -21,6 +24,56 @@ class _HomeState extends State<Home> {
     setState(() {});
   }
 
+  checkUpdate() async {
+    setState(() {
+      updating = true;
+    });
+    var scrollpositin = scrollController.position;
+    if (scrollpositin.pixels == scrollpositin.maxScrollExtent) {
+      var newapi = apiHelper.getApi(coin.data.length);
+      var newcoin = await apiHelper.getCoins(newapi) as Coin;
+      coin.data.addAll(newcoin.data);
+    }
+    setState(() {
+      updating = false;
+    });
+  }
+
+  getBody() {
+    if (coin == null) return Center(child: CircularProgressIndicator());
+    return NotificationListener<ScrollNotification>(
+      onNotification: (noti) {
+        if (noti is ScrollEndNotification) {
+          checkUpdate();
+        }
+        return true;
+      },
+      child: Column(
+        children: [
+          Expanded(
+            child: ListView.builder(
+              controller: scrollController,
+              physics: BouncingScrollPhysics(),
+              itemBuilder: (c, i) {
+                return Card(
+                  elevation: 2,
+                  margin: EdgeInsets.all(8),
+                  child: ListTile(
+                    leading: Text('${i + 1}'),
+                    title: Text(coin.data[i].name),
+                    trailing: Text("\$" + coin.data[i].priceUsd),
+                  ),
+                );
+              },
+              itemCount: coin.data.length,
+            ),
+          ),
+          if (updating) CircularProgressIndicator()
+        ],
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,23 +81,5 @@ class _HomeState extends State<Home> {
           title: Text('coin'),
         ),
         body: getBody());
-  }
-
-  getBody() {
-    if (coin == null) return Center(child: CircularProgressIndicator());
-    return ListView.builder(
-      itemBuilder: (c, i) {
-        return Card(
-          elevation: 2,
-          margin: EdgeInsets.all(8),
-          child: ListTile(
-            leading: Text('${i + 1}'),
-            title: Text(coin.data[i].name),
-            trailing: Text("\$" + coin.data[i].priceUsd),
-          ),
-        );
-      },
-      itemCount: coin.data.length,
-    );
   }
 }
