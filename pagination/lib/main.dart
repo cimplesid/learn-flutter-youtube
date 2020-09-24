@@ -10,6 +10,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Pagination Demo',
+      themeMode: ThemeMode.dark,
+      darkTheme: ThemeData.dark(),
       theme: ThemeData(
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),

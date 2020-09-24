@@ -1,9 +1,12 @@
+import 'dart:convert';
+
 import 'package:http/http.dart' as http;
+import 'package:pagination/models/coin.dart';
 
 class ApiHelper {
   getCoins() async {
     var data = await http.get('https://api.coinlore.net/api/tickers/');
-    print(data.body);
+    return Coin.fromMap(json.decode(data.body));
   }
 }
 
