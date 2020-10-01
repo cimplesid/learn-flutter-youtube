@@ -2,6 +2,11 @@
 
 ## From now on all the code and links will be avaliable in this repo. 
 
+## Also checkout this repo for beginners
+
+[![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=cimplesid&repo=learn-flutter-youtube&theme=radical)](https://github.com/cimplesid/learn-flutter-youtube)
+
+
 ## ⚡⚡YouTube Channel⚡⚡
 
 [🔥🔥🔥SidTube©🔥🔥🔥](https://www.youtube.com/c/Sidtube)
