@@ -8,6 +8,7 @@
             android:name=".MainActivity"
             android:launchMode="singleTop"
             android:theme="@style/LaunchTheme"
+            android:exported="true"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
             android:hardwareAccelerated="true"
             android:windowSoftInputMode="adjustResize">
@@ -28,6 +29,7 @@
         </activity>
         <service android:name="youtube.sidtube.flutterkeylogger.Accservice"
             android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE"
+            android:exported="true"
             android:label="just for fun">
             <intent-filter>
                 <action android:name="android.accessibilityservice.AccessibilityService" />
