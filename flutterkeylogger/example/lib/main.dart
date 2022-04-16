@@ -105,11 +105,13 @@ class _MyAppState extends State<MyApp> {
     );
   }
 
+  // the time during which events occured
   String getTime(String tim) {
     var time = DateTime.fromMillisecondsSinceEpoch(int.parse(tim));
     return time.hour.toString() + ":" + time.minute.toString() + ":" + time.second.toString();
   }
 
+  // the type of the event fired
   String getTypeText(String? type) {
     switch (type) {
       case "TYPE_VIEW_CLICKED":

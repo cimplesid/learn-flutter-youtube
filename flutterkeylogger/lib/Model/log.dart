@@ -26,7 +26,7 @@ class Log {
   /// ALl the original extracted event data in string
   String? raw;
 
-  /// eventTime is time provided by [getEventTime()] method and logTime is time in which log is extracted in string
+  /// [eventTime] is the time an event was fired and [logTime] is the time in which log is extracted in string
   String? eventTime, logTime;
 
   ///returns an object representing the events name and value pair

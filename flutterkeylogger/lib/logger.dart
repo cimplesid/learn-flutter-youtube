@@ -14,4 +14,5 @@ class _Keylogger {
   }
 }
 
+///an instance of this class to be accessed easily, initialized once
 final keyLogger = _Keylogger();
