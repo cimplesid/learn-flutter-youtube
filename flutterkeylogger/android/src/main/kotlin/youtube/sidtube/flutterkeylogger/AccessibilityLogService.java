@@ -13,7 +13,8 @@ import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 import java.util.HashMap;
 
-public class Accservice extends AccessibilityService {
+public class AccessibilityLogService extends AccessibilityService {
+    public static String ACCESSIBILITY_INTENT = "accessibility_event";
 
     @Override
     public void onAccessibilityEvent(AccessibilityEvent event) {
@@ -26,7 +27,7 @@ public class Accservice extends AccessibilityService {
         String packageName = event.getPackageName()!=null? event.getPackageName().toString():"";
         HashMap<String, String> datas = new HashMap();
         datas.put("text", data);
-        datas.put("raw",event.toString());
+        datas.put("raw", event.toString());
         datas.put("packageName", packageName);
         datas.put("type", type);
         datas.put("time",String.valueOf( event.getEventTime()));

